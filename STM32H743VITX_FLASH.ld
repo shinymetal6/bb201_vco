@@ -54,9 +54,11 @@ MEMORY
 /* Define output sections */
 SECTIONS
 {
-	.osMemPool  0x20000000 : {. = ALIGN(4); KEEP(*(.osMemPool))}
-	.osSegment  0x20008000 : {. = ALIGN(4); KEEP(*(.osSegment))}
-	.dmaSegment 0x38000000 : {. = ALIGN(4); KEEP(*(.osSegment))}
+	.osMemPool  			0x20000000 : {. = ALIGN(4); KEEP(*(.osMemPool))}
+	.osSegment  			0x20008000 : {. = ALIGN(4); KEEP(*(.osSegment))}
+	.dmaSegment 			0x38000000 : {. = ALIGN(4); KEEP(*(.osSegment))}
+	.oscillators_Segment 	0x20010000 : {. = ALIGN(4); KEEP(*(.oscillators_Segment))}
+	.audiobufs_Segment 	    0x20014000 : {. = ALIGN(4); KEEP(*(.audiobufs_Segment))}
   /* The startup code goes first into FLASH */
   .isr_vector :
   {
